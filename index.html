@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--META-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Echo">
+	<meta name="author" content="Satish Garg">
+
+	<title>OmniLink</title>
+	<link rel="icon" type="image/png" href="img/favicon.png">
+
+	<!--CSS-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style-3.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+	<style>
+		 .cart-popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        z-index: 1000;
+    }
+	</style>
+	
+</head>
+<body oncontextmenu="return false">
+	<!--PRELOADER-->
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+    <!--PRELOADER-->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<!--HEADER-->
+				<header>
+					<div class="head header-1">
+						<!--NAVBAR-->
+						<nav class="navbar normal indents" role="navigation">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+									<i class="fa fa-bars"></i>
+								</button>
+								<a class="navbar-brand" href="index.html"></a>
+							</div> <!-- navbar-header -->
+							<div class="navbar-collapse collapse">
+								<ul class="nav navbar-nav navbar-right">
+									<li class="current"><a class="scroll" href="index.html">home</a></li>
+									<li><a class="scroll" href="blog.html">blog</a></li>
+									<li><a class="scroll" href="contact.html">contact us</a></li>
+								</ul>
+							</div>
+						</nav>
+						<!--NAVBAR-->
+						<!--CAPTION-->
+						<div class="caption">
+							<div class="item">
+								<h1 class="wow fadeInLeftBig" data-wow-delay="0.5s">OmniLink</h1>
+								<p class="wow fadeInRightBig" data-wow-delay="1s">The Future at Your Command.</p>
+							</div>
+							<div class="item">
+								<h1>OmniLink</h1>
+								<p>Connect, Automate, Simplify. </p>
+							</div>
+							<div class="item">
+								<h1>OmniLink</h1>
+								<p>Seamless AI, Effortless Living.</p>
+							</div>
+						</div>
+						<!--CAPTION-->
+					</div>
+				</header>
+				<!--HEADER-->
+
+				<!--MAIN-->
+				<main>
+					<!--SERVICES-->
+					<section id="services" class="white">
+						<div class="indents">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="title">
+										<h2>our services</h2>
+										<span></span>
+										<p>Access a demo of some of the services you will get once you use our app.</p>
+									</div> <!-- title -->
+								</div>
+							</div> <!-- row -->
+							<div class="row">
+								<!--ITEM 1-->
+								<div class="col-sm-4">
+									<div class="item wow fadeInUp" data-wow-delay="0s">
+										<i class="fa fa-user"></i>
+										<h2>Smart Lighting</h2>
+										<span></span>
+										<p>Control your home's lights with a single click or voice command.</p>
+										</br>
+										<button class="button" onclick="toggleLights()">Toggle Lights</button>
+									</div>
+								</div>
+								<!--ITEM 1-->
+
+								<!--ITEM 2-->
+								<div class="col-sm-4">
+									<div class="item wow fadeInUp" data-wow-delay="0.3s">
+										<i class="fa fa-cog"></i>
+										<h2>Climate Control</h2>
+										<span></span>
+										<p>Adjust the room temperature to your preferred setting using a slider.</p>
+									</br>
+										<input type="range" id="temperature" min="16" max="30" value="22" oninput="updateTemperature()">
+										<p>Temperature: <bold id="tempValue">22</bold>°C</p>
+									</div>
+								</div>
+								<!--ITEM 2-->
+
+								<!--ITEM 3-->
+								<div class="col-sm-4">
+									<div class="item wow fadeInUp" data-wow-delay="0.6s">
+										<i class="fa fa-thumbs-o-up"></i>
+										<h2>Security System</h2>
+										<span></span>
+										<p>Arm or disarm the security system to keep your home safe.</p>
+									</br>
+										<button class="button" onclick="toggleSecurity()">Toggle Security</button>
+                						<p id="securityStatus">Status: Disarmed</p>
+									</div>
+								</div>
+								<!--ITEM 3-->
+							</div> <!-- row -->
+							<div class="row">
+								<!--ITEM 4-->
+								<div class="col-sm-4">
+									<div class="item wow fadeInUp" data-wow-delay="0.9s">
+										<i class="fa fa-eye"></i>
+										<h2>Smart Music</h2>
+										<span></span>
+										<p>Play or stop music instantly with the press of a button.</p>
+									</br>
+										<button class="button" onclick="playMusic()">Play Music</button>
+                						<button class="button" onclick="stopMusic()">Stop Music</button>
+									</div>
+								</div>
+								<!--ITEM 4-->
+
+								<!--ITEM 5-->
+								<div class="col-sm-4">
+									<div class="item wow fadeInUp" data-wow-delay="1.2s">
+										<i class="fa fa-flask"></i>
+										<h2>Voice Control</h2>
+										<span></span>
+										<p>Issue voice commands to control lights, temperature, security, and music.</p>
+									</br>
+										<button class="button" onclick="startVoiceControl()">🎤 Start Listening</button>
+                						<p id="voice-command">Say a command...</p>
+									</div>
+								</div>
+								<!--ITEM 5-->
+
+								<!--ITEM 6-->
+								<div class="col-sm-4">
+									<div class="item wow fadeInUp" data-wow-delay="1.5s">
+										<i class="fa fa-comments-o"></i>
+										<h2>Smart Shopping</h2>
+										<span></span>
+										<p>Browse and add items to your cart effortlessly. Manage your purchases with a seamless shopping experience.</p>
+									</br>
+                						<button class="button" onclick="viewCart()">View Cart</button>
+									</div>
+								</div>
+								<!--ITEM 6-->
+							</div> <!-- row -->
+						</div> <!-- indents -->
+					</section>
+					<!--SERVICES-->
+
+					
+					<!--PARALLAX-->
+					<section id="parallax">
+						<div class="indents">
+							<div class="row">
+								<div class="col-md-12 wow bounceInUp">
+									<h2>we <i class="fa fa-heart-o"></i> TECHNOLOGY.</h2>
+									<p>We revolutionize the way you interact with technology by creating a seamless, AI-powered ecosystem that simplifies daily life. Our cutting-edge solutions integrate smart automation, voice and gesture controls, and predictive intelligence, ensuring effortless connectivity across all your devices. Whether at home, work, or on the go, OmniLink enhances productivity, security, and convenience—making technology work for you, not the other way around. Join us in shaping the future of intelligent living.</p>
+								</div>
+							</div> <!-- row -->
+						</div> <!-- indents -->
+					</section>
+					<!--PARALLAX-->
+
+					<!--TEAM-->
+					<section id="team" class="white">
+							<div class="counters">
+								<div class="row">
+									</br></br>
+									<!--COUNTER 1-->
+									<div class="col-sm-3">
+										<ul class="item">
+											<li><i class="fa fa-users"></i></li>
+											<li>
+												<p class="counter">21</p>
+												<h3>clients</h3>
+											</li>
+										</ul>
+									</div>
+									<!--COUNTER 1-->
+
+									<!--COUNTER 2-->
+									<div class="col-sm-3">
+										<ul class="item">
+											<li><i class="fa fa-briefcase"></i></li>
+											<li>
+												<p class="counter">377</p>
+												<h3>projects</h3>
+											</li>
+										</ul>
+									</div>
+									<!--COUNTER 2-->
+
+									<!--COUNTER 3-->
+									<div class="col-sm-3">
+										<ul class="item">
+											<li><i class="fa fa-globe"></i></li>
+											<li>
+												<p class="counter">55</p>
+												<h3>countries</h3>
+											</li>
+										</ul>
+									</div>
+									<!--COUNTER 3-->
+
+									<!--COUNTER 4-->
+									<div class="col-sm-3">
+										<ul class="item">
+											<li><i class="fa fa-building-o"></i></li>
+											<li>
+												<p class="counter">34</p>
+												<h3>offices</h3>
+											</li>
+										</ul>
+									</div>
+									<!--COUNTER 4-->
+								</div> <!-- row -->
+							</div> <!-- counters -->
+					</section>
+
+					<!--FOOTER-->
+					<footer>
+						<div class="indents">
+							<div class="row">
+								<div class="col-sm-2">
+									<a class="logo" href="index.html"><img src="img/logo-light.png" alt="Logo"></a>
+								</div>
+								<!--Social Media
+								<div class="col-sm-8">
+									<ul>
+										<li><a class="fb" href="#"><i class="fa fa-facebook"></i></a></li>
+										<li><a class="tw" href="#"><i class="fa fa-twitter"></i></a></li>
+										<li><a class="dr" href="#"><i class="fa fa-dribbble"></i></a></li>
+										<li><a class="li" href="#"><i class="fa fa-linkedin"></i></a></li>
+										<li><a class="gp" href="#"><i class="fa fa-google-plus"></i></a></li>
+										<li><a class="ig" href="#"><i class="fa fa-instagram"></i></a></li>
+										<li><a class="tm" href="#"><i class="fa fa-tumblr"></i></a></li>
+									</ul>
+								</div>
+								-->
+							</div> <!-- row -->
+						</div> <!-- indents -->
+					</footer>
+					<!--FOOTER-->
+
+					<div id="cartPopup" class="cart-popup" style="display: none;">
+						<div class="cart-content">
+							<h3>Your Smart Cart</h3>
+							<ul id="cartItems"></ul>
+							<button class="button" onclick="closeCart()">Close</button>
+						</div>
+					</div>
+					
+
+				</main>
+				<!--MAIN-->
+			</div> <!-- col-lg-12 -->
+		</div> <!-- row -->
+	</div> <!-- container -->
+	<a class="scrolltop" href="#"><i class="fa fa-chevron-up"></i></a>
+	<!--JAVASCRIPTS-->
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/waypoints.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.sticky.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/jquery.counterup.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/scripts.js"></script>
+
+	<script>
+        let cartCount = 0;
+        function addToCart() {
+            cartCount++;
+            document.getElementById("cartStatus").innerText = `Cart: ${cartCount} items`;
+        }
+        function viewCart() {
+            alert(`You have ${cartCount} item(s) in your cart.`);
+        }
+        function toggleLights() {
+            alert("Lights toggled!");
+        }
+        function updateTemperature() {
+            const temp = document.getElementById("temperature").value;
+            document.getElementById("tempValue").textContent = temp;
+        }
+        function toggleSecurity() {
+            const status = document.getElementById("securityStatus");
+            status.textContent = status.textContent.includes("Disarmed") ? "Status: Armed" : "Status: Disarmed";
+        }
+        function playMusic() {
+            alert("Playing music...");
+        }
+        function stopMusic() {
+            alert("Music stopped.");
+        }
+        function startVoiceControl() {
+            alert("Listening...")
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.start();
+            document.getElementById("voice-command").innerText = "Listening...";
+            
+            recognition.onresult = function(event) {
+                const command = event.results[0][0].transcript.toLowerCase();
+                document.getElementById("voice-command").innerText = `You said: "${command}"`;
+                
+                if (command.includes("lights")) {
+                    toggleLights();
+                } else if (command.includes("temperature")) {
+                    updateTemperature();
+                } else if (command.includes("security")) {
+                    toggleSecurity();
+                } else if (command.includes("music")) {
+                    playMusic();
+                } else {
+                    alert("Command not recognized");
+                }
+            };
+        }
+		let autoSelectedItems = ["Smart Light", "Smart Speaker", "Smart Thermostat", "Security Camera"];
+
+		function viewCart() {
+			let cartList = document.getElementById("cartItems");
+			cartList.innerHTML = "";  // Clear previous items
+
+			autoSelectedItems.forEach(item => {
+				let listItem = document.createElement("li");
+				listItem.textContent = item;
+				cartList.appendChild(listItem);
+			});
+
+			document.getElementById("cartPopup").style.display = "block"; // Show cart popup
+		}
+
+		function closeCart() {
+			document.getElementById("cartPopup").style.display = "none"; // Hide cart popup
+		}
+
+    </script>
+
+</body>
+</html>
